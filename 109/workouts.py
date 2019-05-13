@@ -27,8 +27,9 @@ def get_workout_motd(day):
         except KeyError:
             print("No day of the week entered")
     for k, v in workout_schedule.items():
-        if v == 'Rest':
-            return chill
-        else:
-            return go_train.format(v)
+        if k == day:
+            if v == 'Rest':
+                return chill
+            else:
+                return go_train.format(v)
 
