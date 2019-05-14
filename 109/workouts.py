@@ -20,16 +20,14 @@ def get_workout_motd(day):
        Trivia: /etc/motd is a file on Unix-like systems that contains
        a 'message of the day'"""
     day = day.title()
-    while True:
-        try:
-            if day in workout_schedule.keys():
-                continue
-        except KeyError:
-            print("No day of the week entered")
-    for k, v in workout_schedule.items():
-        if k == day:
-            if v == 'Rest':
-                return chill
-            else:
-                return go_train.format(v)
+    if day in workout_schedule.keys():
+        for k, v in workout_schedule.items():
+            if k == day:
+                if v == 'Rest':
+                    return chill
+                else:
+                    return go_train.format(v)
+
+    else:
+        raise KeyError
 
