@@ -70,7 +70,7 @@ def calc_max_uptime(reboots):
             continue
 
     # Return tuple of the uptime duration and date
-    return max_duration, formatted_dates_list[uptime_index].strftime("%Y-%m-%d")
+    return max_duration, formatted_dates_list[uptime_index].strftime(f"{datetime.today().year}-%m-%d")
 
 
 if __name__ == '__main__':
