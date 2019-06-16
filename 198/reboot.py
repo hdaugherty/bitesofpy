@@ -3,13 +3,13 @@ from string import ascii_letters
 import re
 
 MAC1 = """
-reboot    ~                         Wed Apr 10 22:39 2019
-reboot    ~                         Wed Mar 27 16:24 2019
-reboot    ~                         Wed Mar 27 15:01 2019
-reboot    ~                         Sun Mar  3 14:51 2019
-reboot    ~                         Sun Feb 17 11:36 2019
-reboot    ~                         Thu Jan 17 21:54 2019
-reboot    ~                         Mon Jan 14 09:25 2019
+reboot    ~                         Wed Apr 10 22:39
+reboot    ~                         Wed Mar 27 16:24
+reboot    ~                         Wed Mar 27 15:01
+reboot    ~                         Sun Mar  3 14:51
+reboot    ~                         Sun Feb 17 11:36
+reboot    ~                         Thu Jan 17 21:54
+reboot    ~                         Mon Jan 14 09:25
 """
 
 
@@ -36,7 +36,7 @@ def calc_max_uptime(reboots):
     split_reboots.remove('')
 
     # Set date format, create formatted list of dates
-    date_format = "%a %b %d %H:%M %Y"
+    date_format = "%a %b %d %H:%M"
     formatted_dates_list = []
     for output in split_reboots:
         formatted_dates_list.append(datetime.strptime(output, date_format))
